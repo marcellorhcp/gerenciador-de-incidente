@@ -1,0 +1,14 @@
+{
+  "gerenciadorDeIncidenteApp": {
+    "Status": {
+      "null": "",
+      "ABERTO": "ABERTO",
+      "ATRIBUIDO": "ATRIBUIDO",
+      "EM_ATENDIMENTO": "EM_ATENDIMENTO",
+      "AGUARDANDO_USUARIO": "AGUARDANDO_USUARIO",
+      "AGUARDANDO_TERCEIRO": "AGUARDANDO_TERCEIRO",
+      "RESOLVIDO": "RESOLVIDO",
+      "FECHADO": "FECHADO"
+    }
+  }
+}

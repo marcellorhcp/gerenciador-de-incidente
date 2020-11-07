@@ -1,0 +1,75 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="gerenciadorDeIncidenteApp.incidente.home.title">Incidentes</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-incidente" [routerLink]="['/incidente/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="gerenciadorDeIncidenteApp.incidente.home.createLabel">
+            Create a new Incidente
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="incidentes?.length === 0">
+        <span jhiTranslate="gerenciadorDeIncidenteApp.incidente.home.notFound">No incidentes found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="incidentes && incidentes.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="gerenciadorDeIncidenteApp.incidente.descricao">Descricao</span></th>
+                    <th scope="col" ><span jhiTranslate="gerenciadorDeIncidenteApp.incidente.status">Status</span></th>
+                    <th scope="col" ><span jhiTranslate="gerenciadorDeIncidenteApp.incidente.impacto">Impacto</span></th>
+                    <th scope="col" ><span jhiTranslate="gerenciadorDeIncidenteApp.incidente.solicitante">Solicitante</span></th>
+                    <th scope="col" ><span jhiTranslate="gerenciadorDeIncidenteApp.incidente.categoria">Categoria</span></th>
+                    <th scope="col" ><span jhiTranslate="gerenciadorDeIncidenteApp.incidente.dataAbertura">Data Abertura</span></th>
+                    <th scope="col" ><span jhiTranslate="gerenciadorDeIncidenteApp.incidente.user">User</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let incidente of incidentes ;trackBy: trackId">
+                    <td><a [routerLink]="['/incidente', incidente.id, 'view']">{{ incidente.id }}</a></td>
+                    <td>{{ incidente.descricao }}</td>
+                    <td jhiTranslate="{{ 'gerenciadorDeIncidenteApp.Status.' + incidente.status }}">{{ incidente.status }}</td>
+                    <td jhiTranslate="{{ 'gerenciadorDeIncidenteApp.Impacto.' + incidente.impacto }}">{{ incidente.impacto }}</td>
+                    <td>{{ incidente.solicitante }}</td>
+                    <td jhiTranslate="{{ 'gerenciadorDeIncidenteApp.Categoria.' + incidente.categoria }}">{{ incidente.categoria }}</td>
+                    <td>{{ incidente.dataAbertura | date:'medium' }}</td>
+                    <td>
+                        {{ incidente.user?.login }}
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/incidente', incidente.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/incidente', incidente.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(incidente)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

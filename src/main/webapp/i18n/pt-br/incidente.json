@@ -1,0 +1,28 @@
+{
+  "gerenciadorDeIncidenteApp": {
+    "incidente": {
+      "home": {
+        "title": "Incidentes",
+        "createLabel": "Criar novo Incidente",
+        "createOrEditLabel": "Criar ou editar Incidente",
+        "notFound": "Nenhum Incidente encontrado"
+      },
+      "created": "Um novo Incidente foi criado com o identificador {{ param }}",
+      "updated": "Um Incidente foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Incidente foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Incidente {{ id }}?"
+      },
+      "detail": {
+        "title": "Incidente"
+      },
+      "descricao": "Descricao",
+      "status": "Status",
+      "impacto": "Impacto",
+      "solicitante": "Solicitante",
+      "categoria": "Categoria",
+      "dataAbertura": "Data Abertura",
+      "user": "User"
+    }
+  }
+}

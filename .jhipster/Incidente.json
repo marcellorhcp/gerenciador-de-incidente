@@ -1,0 +1,53 @@
+{
+  "name": "Incidente",
+  "fields": [
+    {
+      "fieldName": "descricao",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "Status",
+      "fieldValues": "ABERTO,ATRIBUIDO,EM_ATENDIMENTO,AGUARDANDO_USUARIO,AGUARDANDO_TERCEIRO,RESOLVIDO,FECHADO"
+    },
+    {
+      "fieldName": "impacto",
+      "fieldType": "Impacto",
+      "fieldValues": "ALTA,MEDIA,BAIXA"
+    },
+    {
+      "fieldName": "solicitante",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "categoria",
+      "fieldType": "Categoria",
+      "fieldValues": "VIRTUALIZACAO_DE_DESKTOP,VIRTUALIZACAO_DE_SERVIDORES,VIRTUALIZACAO_DE_APLICACOES,MONITORAMENTO,EMAIL,MENSAGEM_INSTANTANEA,TELEFONIA_FIXA,TELEFONIA_MOVEL,INTERNET_MOVEL,IMPRESSAO,CONECTIVIDADE,COMPARTILHAMENTO_DE_ARQUIVOS,HOSPEDAGEM_DE_WEBSITES,HOSPEDAGEM_DE_APLICACOES,DIRETORIO_USUARIOS,BACKUP"
+    },
+    {
+      "fieldName": "dataAbertura",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "incidente",
+      "relationshipName": "user",
+      "otherEntityField": "login"
+    }
+  ],
+  "changelogDate": "20201107042214",
+  "entityTableName": "incidente",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

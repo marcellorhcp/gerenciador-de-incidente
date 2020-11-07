@@ -1,0 +1,11 @@
+id;descricao;status;impacto;solicitante;categoria;data_abertura
+1;../fake-data/blob/hipster.txt;AGUARDANDO_TERCEIRO;ALTA;payment;MONITORAMENTO;2020-11-06T17:05:54
+2;../fake-data/blob/hipster.txt;AGUARDANDO_USUARIO;MEDIA;navigating grow;MONITORAMENTO;2020-11-06T16:48:49
+3;../fake-data/blob/hipster.txt;RESOLVIDO;MEDIA;capacitor;VIRTUALIZACAO_DE_DESKTOP;2020-11-06T17:52:21
+4;../fake-data/blob/hipster.txt;AGUARDANDO_USUARIO;ALTA;Vista auxiliary Group;BACKUP;2020-11-06T22:10:53
+5;../fake-data/blob/hipster.txt;AGUARDANDO_USUARIO;ALTA;multi-byte Toys Berkshire;HOSPEDAGEM_DE_APLICACOES;2020-11-06T05:43:06
+6;../fake-data/blob/hipster.txt;FECHADO;MEDIA;Senior Designer;MENSAGEM_INSTANTANEA;2020-11-06T07:56:35
+7;../fake-data/blob/hipster.txt;ATRIBUIDO;BAIXA;optimize efficient deposit;VIRTUALIZACAO_DE_APLICACOES;2020-11-07T00:04:35
+8;../fake-data/blob/hipster.txt;AGUARDANDO_USUARIO;BAIXA;open-source Credit Card Account users;EMAIL;2020-11-06T10:09:52
+9;../fake-data/blob/hipster.txt;AGUARDANDO_TERCEIRO;ALTA;Consultant North Carolina;HOSPEDAGEM_DE_APLICACOES;2020-11-06T21:01:26
+10;../fake-data/blob/hipster.txt;FECHADO;BAIXA;homogeneous CSS Singapore Dollar;VIRTUALIZACAO_DE_DESKTOP;2020-11-07T02:55:08

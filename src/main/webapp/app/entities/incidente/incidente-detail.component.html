@@ -1,0 +1,54 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="incidente">
+            <h2><span jhiTranslate="gerenciadorDeIncidenteApp.incidente.detail.title">Incidente</span> {{ incidente.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gerenciadorDeIncidenteApp.incidente.descricao">Descricao</span></dt>
+                <dd>
+                    <span>{{ incidente.descricao }}</span>
+                </dd>
+                <dt><span jhiTranslate="gerenciadorDeIncidenteApp.incidente.status">Status</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'gerenciadorDeIncidenteApp.Status.' + incidente.status }}">{{ incidente.status }}</span>
+                </dd>
+                <dt><span jhiTranslate="gerenciadorDeIncidenteApp.incidente.impacto">Impacto</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'gerenciadorDeIncidenteApp.Impacto.' + incidente.impacto }}">{{ incidente.impacto }}</span>
+                </dd>
+                <dt><span jhiTranslate="gerenciadorDeIncidenteApp.incidente.solicitante">Solicitante</span></dt>
+                <dd>
+                    <span>{{ incidente.solicitante }}</span>
+                </dd>
+                <dt><span jhiTranslate="gerenciadorDeIncidenteApp.incidente.categoria">Categoria</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'gerenciadorDeIncidenteApp.Categoria.' + incidente.categoria }}">{{ incidente.categoria }}</span>
+                </dd>
+                <dt><span jhiTranslate="gerenciadorDeIncidenteApp.incidente.dataAbertura">Data Abertura</span></dt>
+                <dd>
+                    <span>{{ incidente.dataAbertura }}</span>
+                </dd>
+                <dt><span jhiTranslate="gerenciadorDeIncidenteApp.incidente.user">User</span></dt>
+                <dd>
+                    {{ incidente.user?.login }}
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/incidente', incidente.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

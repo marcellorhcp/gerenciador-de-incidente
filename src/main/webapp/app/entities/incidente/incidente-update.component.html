@@ -1,0 +1,97 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-incidente-heading" jhiTranslate="gerenciadorDeIncidenteApp.incidente.home.createOrEditLabel">Create or edit a Incidente</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gerenciadorDeIncidenteApp.incidente.descricao" for="field_descricao">Descricao</label>
+                    <textarea class="form-control" name="descricao" id="field_descricao"
+                              formControlName="descricao"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gerenciadorDeIncidenteApp.incidente.status" for="field_status">Status</label>
+                    <select class="form-control" name="status" formControlName="status" id="field_status">
+                        <option value="ABERTO">{{ 'gerenciadorDeIncidenteApp.Status.ABERTO' | translate }}</option>
+                        <option value="ATRIBUIDO">{{ 'gerenciadorDeIncidenteApp.Status.ATRIBUIDO' | translate }}</option>
+                        <option value="EM_ATENDIMENTO">{{ 'gerenciadorDeIncidenteApp.Status.EM_ATENDIMENTO' | translate }}</option>
+                        <option value="AGUARDANDO_USUARIO">{{ 'gerenciadorDeIncidenteApp.Status.AGUARDANDO_USUARIO' | translate }}</option>
+                        <option value="AGUARDANDO_TERCEIRO">{{ 'gerenciadorDeIncidenteApp.Status.AGUARDANDO_TERCEIRO' | translate }}</option>
+                        <option value="RESOLVIDO">{{ 'gerenciadorDeIncidenteApp.Status.RESOLVIDO' | translate }}</option>
+                        <option value="FECHADO">{{ 'gerenciadorDeIncidenteApp.Status.FECHADO' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gerenciadorDeIncidenteApp.incidente.impacto" for="field_impacto">Impacto</label>
+                    <select class="form-control" name="impacto" formControlName="impacto" id="field_impacto">
+                        <option value="ALTA">{{ 'gerenciadorDeIncidenteApp.Impacto.ALTA' | translate }}</option>
+                        <option value="MEDIA">{{ 'gerenciadorDeIncidenteApp.Impacto.MEDIA' | translate }}</option>
+                        <option value="BAIXA">{{ 'gerenciadorDeIncidenteApp.Impacto.BAIXA' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gerenciadorDeIncidenteApp.incidente.solicitante" for="field_solicitante">Solicitante</label>
+                    <input type="text" class="form-control" name="solicitante" id="field_solicitante"
+                           formControlName="solicitante"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gerenciadorDeIncidenteApp.incidente.categoria" for="field_categoria">Categoria</label>
+                    <select class="form-control" name="categoria" formControlName="categoria" id="field_categoria">
+                        <option value="VIRTUALIZACAO_DE_DESKTOP">{{ 'gerenciadorDeIncidenteApp.Categoria.VIRTUALIZACAO_DE_DESKTOP' | translate }}</option>
+                        <option value="VIRTUALIZACAO_DE_SERVIDORES">{{ 'gerenciadorDeIncidenteApp.Categoria.VIRTUALIZACAO_DE_SERVIDORES' | translate }}</option>
+                        <option value="VIRTUALIZACAO_DE_APLICACOES">{{ 'gerenciadorDeIncidenteApp.Categoria.VIRTUALIZACAO_DE_APLICACOES' | translate }}</option>
+                        <option value="MONITORAMENTO">{{ 'gerenciadorDeIncidenteApp.Categoria.MONITORAMENTO' | translate }}</option>
+                        <option value="EMAIL">{{ 'gerenciadorDeIncidenteApp.Categoria.EMAIL' | translate }}</option>
+                        <option value="MENSAGEM_INSTANTANEA">{{ 'gerenciadorDeIncidenteApp.Categoria.MENSAGEM_INSTANTANEA' | translate }}</option>
+                        <option value="TELEFONIA_FIXA">{{ 'gerenciadorDeIncidenteApp.Categoria.TELEFONIA_FIXA' | translate }}</option>
+                        <option value="TELEFONIA_MOVEL">{{ 'gerenciadorDeIncidenteApp.Categoria.TELEFONIA_MOVEL' | translate }}</option>
+                        <option value="INTERNET_MOVEL">{{ 'gerenciadorDeIncidenteApp.Categoria.INTERNET_MOVEL' | translate }}</option>
+                        <option value="IMPRESSAO">{{ 'gerenciadorDeIncidenteApp.Categoria.IMPRESSAO' | translate }}</option>
+                        <option value="CONECTIVIDADE">{{ 'gerenciadorDeIncidenteApp.Categoria.CONECTIVIDADE' | translate }}</option>
+                        <option value="COMPARTILHAMENTO_DE_ARQUIVOS">{{ 'gerenciadorDeIncidenteApp.Categoria.COMPARTILHAMENTO_DE_ARQUIVOS' | translate }}</option>
+                        <option value="HOSPEDAGEM_DE_WEBSITES">{{ 'gerenciadorDeIncidenteApp.Categoria.HOSPEDAGEM_DE_WEBSITES' | translate }}</option>
+                        <option value="HOSPEDAGEM_DE_APLICACOES">{{ 'gerenciadorDeIncidenteApp.Categoria.HOSPEDAGEM_DE_APLICACOES' | translate }}</option>
+                        <option value="DIRETORIO_USUARIOS">{{ 'gerenciadorDeIncidenteApp.Categoria.DIRETORIO_USUARIOS' | translate }}</option>
+                        <option value="BACKUP">{{ 'gerenciadorDeIncidenteApp.Categoria.BACKUP' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gerenciadorDeIncidenteApp.incidente.dataAbertura" for="field_dataAbertura">Data Abertura</label>
+                    <div class="d-flex">
+                        <input id="field_dataAbertura" type="datetime-local" class="form-control" name="dataAbertura" formControlName="dataAbertura" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gerenciadorDeIncidenteApp.incidente.user" for="field_user">User</label>
+                    <select class="form-control" id="field_user" name="user" formControlName="user">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="userOption.id === editForm.get('user')!.value?.id ? editForm.get('user')!.value : userOption" *ngFor="let userOption of users; trackBy: trackById">{{ userOption.login }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

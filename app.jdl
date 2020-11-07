@@ -1,0 +1,53 @@
+enum Impacto {
+    ALTA,
+    MEDIA,
+    BAIXA
+}
+
+enum Categoria {
+	VIRTUALIZACAO_DE_DESKTOP,
+	VIRTUALIZACAO_DE_SERVIDORES,
+	VIRTUALIZACAO_DE_APLICACOES,
+	MONITORAMENTO,
+	EMAIL,
+	MENSAGEM_INSTANTANEA,
+	TELEFONIA_FIXA,
+	TELEFONIA_MOVEL,
+	INTERNET_MOVEL,
+	IMPRESSAO,
+	CONECTIVIDADE,
+	COMPARTILHAMENTO_DE_ARQUIVOS,
+	HOSPEDAGEM_DE_WEBSITES,
+	HOSPEDAGEM_DE_APLICACOES,
+	DIRETORIO_USUARIOS,
+	BACKUP
+}
+
+enum Status {
+    ABERTO,
+    ATRIBUIDO,
+    EM_ATENDIMENTO,
+    AGUARDANDO_USUARIO,
+    AGUARDANDO_TERCEIRO,
+    RESOLVIDO,
+    FECHADO
+}
+
+entity Incidente {
+    id Integer required,
+    descricao TextBlob,
+    status Status,
+    impacto Impacto,
+    solicitante String,
+    categoria Categoria,
+    dataAbertura Instant
+}
+
+relationship ManyToOne {
+	Incidente{user(login)} to User
+}
+
+
+service * with serviceClass
+
+filter Incidente
