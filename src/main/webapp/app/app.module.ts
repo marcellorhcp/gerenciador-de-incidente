@@ -6,6 +6,7 @@ import { GerenciadorDeIncidenteSharedModule } from 'app/shared/shared.module';
 import { GerenciadorDeIncidenteCoreModule } from 'app/core/core.module';
 import { GerenciadorDeIncidenteAppRoutingModule } from './app-routing.module';
 import { GerenciadorDeIncidenteHomeModule } from './home/home.module';
+import { GerenciadorDeIncidenteLoginPageModule } from './login/login-page.module';
 import { GerenciadorDeIncidenteEntityModule } from './entities/entity.module';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { MainComponent } from './layouts/main/main.component';
@@ -21,6 +22,7 @@ import { ErrorComponent } from './layouts/error/error.component';
     GerenciadorDeIncidenteSharedModule,
     GerenciadorDeIncidenteCoreModule,
     GerenciadorDeIncidenteHomeModule,
+    GerenciadorDeIncidenteLoginPageModule,
     // jhipster-needle-angular-add-module JHipster will add new module here
     GerenciadorDeIncidenteEntityModule,
     GerenciadorDeIncidenteAppRoutingModule,
