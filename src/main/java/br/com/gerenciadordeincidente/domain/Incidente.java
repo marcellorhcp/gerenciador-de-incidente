@@ -166,7 +166,9 @@ public class Incidente implements Serializable {
 	}
 
 	public int getPrioridade() {
-		if (this.impacto.equals(Impacto.ALTA) && this.categoria.getUrgencia().equals(Urgencia.ALTA)) {
+		if (this.status.equals(Status.FECHADO)) {
+			return 999;
+		} else if (this.impacto.equals(Impacto.ALTA) && this.categoria.getUrgencia().equals(Urgencia.ALTA)) {
 			return 1;
 		} else if ((this.impacto.equals(Impacto.ALTA) && this.categoria.getUrgencia().equals(Urgencia.MEDIA))
 				|| (this.impacto.equals(Impacto.ALTA) && this.categoria.getUrgencia().equals(Urgencia.BAIXA))

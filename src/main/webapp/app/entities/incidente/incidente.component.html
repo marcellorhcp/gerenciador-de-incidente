@@ -22,6 +22,7 @@
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
                 <tr>
+                 	<th scope="col" ></th>
                     <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
                     <th scope="col" ><span jhiTranslate="gerenciadorDeIncidenteApp.incidente.descricao">Descricao</span></th>
                     <th scope="col" ><span jhiTranslate="gerenciadorDeIncidenteApp.incidente.status">Status</span></th>
@@ -35,6 +36,7 @@
             </thead>
             <tbody>
                 <tr *ngFor="let incidente of incidentes ;trackBy: trackId">
+                    <td class="{{ 'bg-priority-' + incidente.prioridade }}"> </td> 
                     <td><a [routerLink]="['/incidente', incidente.id, 'view']">{{ incidente.id }}</a></td>
                     <td>{{ incidente.descricao }}</td>
                     <td jhiTranslate="{{ 'gerenciadorDeIncidenteApp.Status.' + incidente.status }}">{{ incidente.status }}</td>

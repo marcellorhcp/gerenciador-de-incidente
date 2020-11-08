@@ -13,6 +13,7 @@ export interface IIncidente {
   categoria?: Categoria;
   dataAbertura?: Moment;
   user?: IUser;
+  prioridade?: number;
 }
 
 export class Incidente implements IIncidente {
@@ -24,6 +25,7 @@ export class Incidente implements IIncidente {
     public solicitante?: string,
     public categoria?: Categoria,
     public dataAbertura?: Moment,
-    public user?: IUser
+    public user?: IUser,
+    public prioridade?: number,
   ) {}
 }
