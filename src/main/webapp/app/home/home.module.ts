@@ -3,10 +3,7 @@ import { RouterModule } from '@angular/router';
 
 import { GerenciadorDeIncidenteSharedModule } from 'app/shared/shared.module';
 import { HOME_ROUTE } from './home.route';
-import { HomeComponent } from './home.component';
-
 @NgModule({
-  imports: [GerenciadorDeIncidenteSharedModule, RouterModule.forChild([HOME_ROUTE])],
-  declarations: [HomeComponent],
+  imports: [GerenciadorDeIncidenteSharedModule, RouterModule.forChild([HOME_ROUTE])]
 })
 export class GerenciadorDeIncidenteHomeModule {}

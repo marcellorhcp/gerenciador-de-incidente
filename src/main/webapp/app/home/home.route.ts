@@ -1,13 +1,14 @@
 import { Route } from '@angular/router';
 import { UserRouteAccessService } from 'app/core/auth/user-route-access-service';
-import { HomeComponent } from './home.component';
+import { IncidenteComponent } from 'app/entities/incidente/incidente.component';
+import { Authority } from 'app/shared/constants/authority.constants';
 
-export const HOME_ROUTE: Route = {
+export const HOME_ROUTE: Route =  {
   path: '',
-  component: HomeComponent,
+  component: IncidenteComponent,
   data: {
-    authorities: ['ROLE_USER'],
-    pageTitle: 'home.title',
+    authorities: [Authority.USER],
+    pageTitle: 'gerenciadorDeIncidenteApp.incidente.home.title',
   },
-  canActivate: [UserRouteAccessService]
+  canActivate: [UserRouteAccessService],
 };
