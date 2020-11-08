@@ -2,7 +2,7 @@
     <h2 id="page-heading">
         <span jhiTranslate="gerenciadorDeIncidenteApp.incidente.home.title">Incidentes</span>
 
-        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-incidente" [routerLink]="['/incidente/new']">
+        <button *jhiHasAnyAuthority="'ROLE_ADMIN'" id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-incidente" [routerLink]="['/incidente/new']">
             <fa-icon icon="plus"></fa-icon>
             <span  jhiTranslate="gerenciadorDeIncidenteApp.incidente.home.createLabel">
             Create a new Incidente
