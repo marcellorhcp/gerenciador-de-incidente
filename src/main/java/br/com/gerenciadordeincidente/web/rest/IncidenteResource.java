@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
@@ -92,6 +93,11 @@ public class IncidenteResource {
     public ResponseEntity<List<Incidente>> getAllIncidentes(IncidenteCriteria criteria) {
         log.debug("REST request to get Incidentes by criteria: {}", criteria);
         List<Incidente> entityList = incidenteQueryService.findByCriteria(criteria);
+        entityList.sort(Comparator.comparingInt(Incidente::getPrioridade)
+        						  .reversed()
+        						  .thenComparing(Comparator.comparing(Incidente::getDataAbertura,Comparator.reverseOrder()))
+        						  .reversed()
+        						  .thenComparing(i->i.getStatus().getOrdem()));
         return ResponseEntity.ok().body(entityList);
     }
 
