@@ -54,7 +54,7 @@ export class LoginModalComponent implements AfterViewInit {
             this.router.url.startsWith('/account/activate') ||
             this.router.url.startsWith('/account/reset/')
           ) {
-            this.router.navigate(['']);
+            this.router.navigate(['/incidente']);
           }
         },
         () => (this.authenticationError = true)

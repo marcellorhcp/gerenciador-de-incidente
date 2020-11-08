@@ -27,7 +27,7 @@ export class AuthExpiredInterceptor implements HttpInterceptor {
           }
           this.stateStorageService.storeUrl(this.router.routerState.snapshot.url);
           this.loginService.logout();
-          this.router.navigate(['']);
+          this.router.navigate(['/login']);
           this.loginModalService.open();
         }
       })

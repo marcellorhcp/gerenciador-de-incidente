@@ -42,7 +42,7 @@ export class LoginPageComponent {
             this.router.url.startsWith('/account/activate') ||
             this.router.url.startsWith('/account/reset/')
           ) {
-            this.router.navigate(['']);
+            this.router.navigate(['/incidente']);
           }
 
           this.eventManager.broadcast({
@@ -57,7 +57,7 @@ export class LoginPageComponent {
             this.stateStorageService.clearUrl();
             this.router.navigateByUrl(redirect);
           } else {
-            this.router.navigate(['']);
+            this.router.navigate(['/incidente']);
           }
         },
         () => (this.authenticationError = true)
