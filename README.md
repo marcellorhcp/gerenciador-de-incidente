@@ -1,7 +1,7 @@
 # Gerenciador De Incidente
 
 <p align="center">
-  <img alt="gerenciadorIncidente" src=".github/cover.png" width="640px">
+  <img alt="gerenciadorIncidente" src=".github/cover.jpg" width="640px">
 </p>
 
 This application was generated using JHipster 6.10.4, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v6.10.4](https://www.jhipster.tech/documentation-archive/v6.10.4).
