@@ -1,4 +1,4 @@
-<h1 align="center"> Gerenciador De Incidente </h1> 
+<h1 align="center"> Gerenciador de Incidente </h1> 
 
 <p align="center">
   <img alt="gerenciadorIncidente" src=".github/cover.JPG" width="1280px">
